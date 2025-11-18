@@ -1,0 +1,54 @@
+.topbar-container {
+  width: 100%;
+  height: 65px;
+  background: rgba(10, 10, 20, 0.6);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+}
+
+/* MAKE LOGO REALLY LARGE */
+.miyraa-logo {
+  width: 100px !important;     /* ⭐ Works 100% */
+  height: auto !important;
+  object-fit: contain;
+  margin-left: -5px;
+  transform: translateY(6px);  /* optional small shift */
+}
+
+/* REMOVE ANY LIMITS */
+.topbar-left img {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-6px); filter: blur(10px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+.topbar-right {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.top-icon {
+  width: 26px;
+  height: 26px;
+  color: #d3d3e2;
+  cursor: pointer;
+  transition: .2s;
+}
+.top-icon:hover {
+  color: #ff72df;
+  transform: scale(1.08);
+}

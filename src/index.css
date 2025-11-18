@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* THEME TOKENS */
+:root{
+  --bg: #0A0A14;
+  --p1: #FF4F6D;
+  --p2: #A65FFF;
+  --p3: #FFB648;
+  --accent-gradient: linear-gradient(120deg,var(--p1),var(--p2),var(--p3));
+  --card-bg: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.04);
+  --muted: rgba(255,255,255,0.55);
+  --text: #FFFFFF;
+  --radius-card: 16px;
+  --radius-phone: 32px;
+  --nav-height: 76px;
+  --shadow-glow: 0 12px 40px rgba(166,95,255,0.08);
+  --ease-fast: cubic-bezier(.22,.9,.36,1);
+}
+
+/* fonts */
+@font-face {
+  font-family: "Miyraa Sans";
+  src: url("/fonts/MiyraaSans.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* base */
+html,body,#root { height: 100%; }
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  background: #000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* scrolling helpers */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.smooth-touch { -webkit-overflow-scrolling: touch; }
+
+/* gradient text helper */
+.gradient-text {
+  background-image: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: "Miyraa Sans", Inter, sans-serif;
+}
+
+/* phone shell */
+.phone-shell { background: var(--bg); }
+
+/* silent theme classes */
+.theme-joy .post-card { box-shadow: 0 10px 30px rgba(255,79,109,0.05); }
+.theme-calm .post-card { box-shadow: 0 10px 30px rgba(61,158,255,0.04); }
+.theme-reflective .post-card { box-shadow: 0 10px 30px rgba(166,95,255,0.04); }
+
+/* UI helpers */
+.frosted { background: rgba(255,255,255,0.03); backdrop-filter: blur(8px); }
+.object-cover-center { object-fit: cover; object-position: center center; }
+
+/* standard timings */
+.miyraa-transition { transition: all 240ms var(--ease-fast); }
+
+/* breathing gradient for FAB & subtle global pulse */
+@keyframes breath {
+  0% { transform: scale(1); filter: saturate(1); opacity: 1; }
+  50% { transform: scale(1.03); filter: saturate(1.08); opacity: 0.96; }
+  100% { transform: scale(1); filter: saturate(1); opacity: 1; }
+}
+
+/* header glow */
+.header-glow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 260px;
+  height: 60px;
+  filter: blur(34px) saturate(1.1);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.65;
+  background: linear-gradient(120deg, rgba(255,79,109,0.15), rgba(166,95,255,0.12), rgba(255,182,72,0.08));
+  animation: breath 4.5s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* particle ring row (behind story row) */
+.header-particles {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 360px;
+  height: 8px;
+  top: 28px;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: radial-gradient(circle at 10% 50%, rgba(255,79,109,0.6) 0 2px, transparent 3px),
+                    radial-gradient(circle at 30% 50%, rgba(166,95,255,0.6) 0 2px, transparent 3px),
+                    radial-gradient(circle at 60% 50%, rgba(255,182,72,0.5) 0 2px, transparent 3px);
+  background-size: 100% 100%;
+  mix-blend-mode: screen;
+}
+
+/* subtle card enter */
+.card-enter {
+  transform-origin: center top;
+  opacity: 0;
+  transform: translateY(8px) scale(0.995);
+}
+.card-enter-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all 320ms var(--ease-fast);
+}
+
+/* parallax variable (used by PostCard) */
+.post-card { --parallax: 0px; transform: translateZ(0); }
+
+/* parallax image inside card */
+.post-card .parallax-media {
+  transform: translateY(var(--parallax));
+  transition: transform 420ms cubic-bezier(.22,.9,.36,1);
+}
+
+/* overscroll bounce for iOS/Chrome mobile - best-effort */
+.scroll-area {
+  overscroll-behavior: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* small shadow accent below phone to separate from background */
+.phone-frame-shadow {
+  box-shadow: 0 40px 120px rgba(0,0,0,0.6), inset 0 0 40px rgba(166,95,255,0.02);
+}
+
+/* more clarity for icons */
+.icon-bright { filter: brightness(1.15) contrast(1.02); }
+
+/* quick helper for center align bottom nav container usage */
+.bottom-nav-wrapper { display:flex; align-items:center; justify-content:center; width:100%; }
+
+.hide-scroll {
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hide-scroll::-webkit-scrollbar {
+  display: none;            /* Chrome/Safari */
+}
+.topbar-container {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  box-sizing: border-box;
+  background: rgba(10, 10, 20, 0.6);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Left empty block for symmetrical layout */
+.topbar-left {
+  width: 40px;
+}
+
+/* Center Logo */
+.topbar-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.miyraa-logo {
+  width: 135px;
+  height: auto;
+  opacity: 0;
+  animation: fadeInGlow 1.4s ease-out forwards;
+  pointer-events: none;
+  user-select: none;
+  image-rendering: high-quality;
+}
+
+/* Glow Fade-in Animation */
+@keyframes fadeInGlow {
+  0% {
+    opacity: 0;
+    filter: blur(15px) brightness(0.3);
+    transform: scale(0.96);
+  }
+  60% {
+    opacity: 0.9;
+    filter: blur(8px) brightness(1.2);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px) brightness(1);
+    transform: scale(1);
+  }
+}
+
+/* Right Icon */
+.topbar-right {
+  width: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.icon-msg {
+  width: 26px;
+  height: 26px;
+  color: #c9c9d8;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.icon-msg:hover {
+  color: #ff88e8;
+  transform: scale(1.08);
+}
+/* hide scrollbars but allow scrolling */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}

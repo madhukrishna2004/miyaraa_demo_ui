@@ -1,0 +1,36 @@
+.story-row {
+  display: flex;
+  overflow-x: auto;
+  padding: 8px 12px;
+  gap: 16px;
+  scrollbar-width: none;
+}
+.story-row::-webkit-scrollbar { display: none; }
+
+.story-item {
+  text-align: center;
+  width: 66px;
+}
+
+.story-ring {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  padding: 3px;
+  background: linear-gradient(45deg, #ff4f6d, #a65fff, #ffd34d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-dp {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.story-name {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #d6d6e4;
+}

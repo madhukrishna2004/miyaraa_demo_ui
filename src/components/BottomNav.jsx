@@ -1,0 +1,52 @@
+// src/components/BottomNav.jsx
+import React from "react";
+import { UserCircleIcon, Squares2X2Icon, PlayCircleIcon } from "@heroicons/react/24/outline";
+
+export default function BottomNav() {
+  return (
+    <div
+      style={{
+        width: 360,
+        maxWidth: "92%",
+        height: 70,
+        borderRadius: 18,
+        background: "linear-gradient(180deg, rgba(12,8,18,0.95), rgba(20,14,32,0.92))",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-around",
+        padding: "0 16px",
+        boxShadow: "0 10px 30px rgba(10,6,20,0.6)"
+      }}
+    >
+      {/* Profile */}
+      <UserCircleIcon style={{ width: 22, height: 22, color: "#fff" }} />
+
+      {/* Feed */}
+      <Squares2X2Icon style={{ width: 22, height: 22, color: "#fff" }} />
+
+      {/* FAB */}
+      <div style={{ width: 72, display: "flex", justifyContent: "center" }}>
+        <button
+          style={{
+            width: 60,
+            height: 60,
+            borderRadius: "50%",
+            background: "linear-gradient(135deg,#a65fff,#ff4f6d)",
+            color: "white",
+            border: "none",
+            fontSize: 28,
+            boxShadow: "0 8px 32px rgba(166,95,255,0.45)"
+          }}
+        >
+          +
+        </button>
+      </div>
+
+      {/* Reels */}
+      <PlayCircleIcon style={{ width: 22, height: 22, color: "#fff" }} />
+
+      {/* AI Lab */}
+      <img src="/assets/lab.svg" alt="AI Lab" style={{ width: 22, height: 22 }} />
+    </div>
+  );
+} 

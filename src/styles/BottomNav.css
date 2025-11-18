@@ -1,0 +1,41 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 78px;
+  background: rgba(10, 10, 20, 0.85);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.nav-item {
+  text-align: center;
+  color: #b5b5c6;
+  font-size: 11px;
+}
+
+.nav-icon {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 4px;
+}
+
+.nav-fab {
+  position: relative;
+  top: -28px;
+}
+
+.fab-btn {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(45deg, #ff4f6d, #a65fff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 26px;
+  box-shadow: 0 0 18px rgba(166,95,255,0.7);
+}
