@@ -140,7 +140,7 @@ export default function HomeFeed() {
         style={{
           width: 400,
           height: 860,
-          border: "1px solid rgba(255,255,255,0.03)"
+          border: "1px solid rgba(233, 10, 10, 0.03)"
         }}
       >
         {/* pass refs via DOM querying in useEffect */}

@@ -1,0 +1,41 @@
+.msg-screen {
+  background: #0b0b14;
+  min-height: 100vh;
+  padding-bottom: 90px;
+  color: white;
+}
+
+.msg-heading {
+  padding: 20px;
+  font-size: 22px;
+}
+
+.msg-list {
+  padding: 0 20px;
+}
+
+.msg-item {
+  display: flex;
+  gap: 15px;
+  padding: 16px 0;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.msg-dp {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.msg-name {
+  font-size: 16px;
+  margin: 0;
+}
+
+.msg-last {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-top: 3px;
+}

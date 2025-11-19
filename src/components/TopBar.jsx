@@ -1,38 +1,47 @@
-// src/components/TopBar.jsx
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/TopBar.css";
-import "../styles/animations.css";
-import { ChatBubbleLeftRightIcon, BellIcon } from "@heroicons/react/24/outline";
 
-const TopBar = () => {
+import {
+  HomeIcon,
+  BellIcon,
+  ChatBubbleLeftRightIcon
+} from "@heroicons/react/24/outline";
+
+export default function TopBar() {
+  const navigate = useNavigate();
+
   return (
     <div className="topbar-container">
-      {/* Left */}
-      <div
-        className="topbar-left"
-        style={{
-          position: "relative",
-          display: "flex",
-          alignItems: "center"
-        }}
-      >
-        <div className="light-trail" aria-hidden="true" />
-
+      
+      {/* Miyraa Logo */}
+      <div className="topbar-left">
         <img
-  src="/assets/miyraa-glow.png"
-  className="miyraa-logo"
-  alt="miyraa"
-/>
-
+          src="/assets/miyraa-glow.png"
+          className="miyraa-logo"
+          alt="miyraa"
+          onClick={() => navigate("/home")}
+        />
       </div>
 
-      {/* Right */}
+      {/* Right Icons */}
       <div className="topbar-right">
-        <BellIcon className="top-icon" />
-        <ChatBubbleLeftRightIcon className="top-icon" />
+        <HomeIcon
+          className="top-icon"
+          onClick={() => navigate("/home")}
+        />
+
+        <BellIcon
+          className="top-icon"
+          onClick={() => navigate("/notifications")}
+        />
+
+        <ChatBubbleLeftRightIcon
+          className="top-icon"
+          onClick={() => navigate("/messages")}
+        />
       </div>
+
     </div>
   );
-};
-
-export default TopBar;
+}

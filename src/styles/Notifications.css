@@ -1,0 +1,37 @@
+.notif-screen {
+  background: #0b0b14;
+  min-height: 100vh;
+  padding-bottom: 90px;
+  color: white;
+}
+
+.notif-heading {
+  padding: 20px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.notif-list {
+  padding: 0 20px;
+}
+
+.notif-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.notif-dp {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.notif-text span {
+  display: block;
+  opacity: 0.5;
+  font-size: 12px;
+}

@@ -1,0 +1,182 @@
+/* MAIN SCREEN */
+.profile-screen {
+  background: #0b0b14;
+  min-height: 100vh;
+  padding-bottom: 90px;
+  color: white;
+}
+
+/* TOP USER SECTION */
+.profile-section {
+  padding: 20px;
+}
+
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.profile-dp {
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #d354ff;
+  box-shadow: 0 0 12px rgba(211,84,255,0.6);
+}
+
+.profile-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.profile-stats div {
+  text-align: center;
+}
+
+.profile-stats h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.profile-stats span {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* NAME + BIO */
+.profile-name {
+  margin: 12px 0 0;
+  font-size: 20px;
+}
+
+.profile-username {
+  margin: 3px 0 8px;
+  opacity: 0.7;
+}
+
+.profile-bio {
+  white-space: pre-line;
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.profile-bio a {
+  color: #7ab4ff;
+  text-decoration: none;
+}
+
+/* BUTTONS */
+.profile-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn, .share-btn {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  font-size: 14px;
+}
+
+/* HIGHLIGHTS */
+.highlights-row {
+  display: flex;
+  gap: 16px;
+  padding: 10px 20px;
+  overflow-x: auto;
+}
+
+.highlight-item {
+  text-align: center;
+}
+
+.highlight-img, .highlight-add {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(45deg,#d354ff,#ff7ad8,#ffba6b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.highlight-img {
+  object-fit: cover;
+}
+
+.highlight-item p {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/* TABS */
+.profile-tabs {
+  margin-top: 10px;
+  padding: 8px 0;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.tab-icon {
+  width: 24px;
+  opacity: 0.5;
+}
+
+.tab-icon.active {
+  opacity: 1;
+}
+
+/* POSTS GRID */
+.profile-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 2px;
+  margin-top: 3px;
+}
+
+.post-item img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+/* Hide horizontal scrollbar */
+.hide-scrollbar {
+  overflow-x: scroll;
+  scrollbar-width: none;        /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari */
+}
+/* Prevent ANY horizontal scrolling on the entire screen */
+.profile-screen,
+.profile-section,
+.highlights-row {
+  overflow-x: hidden !important;
+}
+.highlights-row::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.highlights-row::-webkit-scrollbar-thumb {
+  background: transparent !important;
+}
+/* Absolute Force Hide Horizontal Scrollbars Everywhere in Profile */
+.profile-screen *::-webkit-scrollbar {
+  display: none !important;
+}
+
+.profile-screen {
+  overflow-x: hidden !important;
+}
